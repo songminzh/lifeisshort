@@ -1,0 +1,2 @@
+# lifeisshort
+use python
