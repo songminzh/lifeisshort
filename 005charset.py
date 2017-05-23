@@ -29,21 +29,25 @@ x = b'ABC'
 
 # 反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode()方法
 
-'ABC'.decode('ascii')
+b'ABC'.decode('ascii')
 
-'中文'.decode('utf-8')
+b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8')
 
 # 要计算str包含多少个字符，可以用len()函数：
 len('ABC')
 len('中文')
 
 len(b'ABC')
-len(b'中文')
+len('中文'.encode('utf-8'))
 
 # 可见，1个中文字符经过UTF-8编码后通常会占用3个字节，而1个英文字符只占用1个字节。
 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+# 格式化
+# %d : 整数 %f:浮点数 %s:字符串 %x:十六进制数
+'Hello, %s' % 'World'
 
 
 
