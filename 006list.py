@@ -26,7 +26,7 @@ classmates[1] = 'sara'
 L = ['Apple',23,True]
 
 # list中可以嵌套list
-M = ['python','java',['OC','swift'],'php'] 也即：
+M = ['python','java',['OC','swift'],'php'] # 也即：
 iOS = ['OC','Swift']
 M = ['python','java',iOS,'php']
 # 要拿到'swift'可以用iOS[1]或者M[2][1]，因此可以将M看成一个二维数组
