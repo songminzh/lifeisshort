@@ -66,22 +66,32 @@ print(r)
 import math
 
 def quadratic(a, b, c):
-    d = b**2 - 4 * a * c
-    if d < 0:
-        return
-    elif d == 0:
-        return -b / (2 * a)
+    for i in (a, b, c):
+        if not (isinstance(i, (int, float))):
+            raise TypeError('bad operand type')
+    if a == 0:
+        return -c / b
     else:
-        x_1 = (-b + math.sqrt(d)) / (2 * a)
-        x_2 = (-b - math.sqrt(d)) / (2 * a)
-        return x_1,x_2
+        delta = b**2 - 4 * a * c
+        if delta < 0:
+            return ('方程无实数根，但有两个共轭复根')
+        elif delta == 0:
+            print ('方程有一个实数根')
+            return -b / (2 * a)
+        else:
+            x_1 = (-b + math.sqrt(delta)) / (2 * a)
+            x_2 = (-b - math.sqrt(delta)) / (2 * a)
+            print('方程有两个实数根')
+            return x_1,x_2
 
-x = quadratic(2, 3, 1)
-print(x)
+#x = quadratic(2, 3, 1)
+#print(x)
+print('quadratic(2, 3, 1) =', quadratic(2, 3, 1))
+print('quadratic(1, 3, -4) =', quadratic(1, 3, -4))
 
-
-
-
-
-
-
+if quadratic(2, 3, 1) != (-0.5, -1.0):
+    print('测试失败')
+elif quadratic(1, 3, -4) != (1.0, -4.0):
+    print('测试失败')
+else:
+    print('测试成功')
