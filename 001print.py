@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
+
+# print
+
 print ('Life is short','I use python.')
-
 print (300)
-
 print ('100 + 200 =',100 + 200)
 
 username = input()
