@@ -1,4 +1,6 @@
-# print absolute value of an integeri
+# -*- coding: utf-8 -*-
+
+# print absolute value of an integer
 
 a = int(input('please input an integer: '))
 if a >= 0:
