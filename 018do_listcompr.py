@@ -10,7 +10,7 @@ dict = {'x' : 'A', 'y' : 'B', 'z' : 'C'}
 for key, value in dict.items():
     print(key, '=', value)
     
-L = [key + '=' + value for key, value in dict.items()]
+    dict.items()]
 print(L)
 
 Arr = ['IOS', 'Swift', 'Objective-C']

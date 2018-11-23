@@ -1,8 +1,8 @@
+# -*- coding: utf-8 -*-
+
 # "\"用来转义，输入特殊符号
 print('I\'m OK.')
-
 print('I\'m learning \nPython.')
-
 print('\\\n\\')
 
 # '''...'''表示多行内容

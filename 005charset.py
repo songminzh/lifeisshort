@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # 在最新的Python 3版本中，字符串是以Unicode编码的，也就是说，Python的字符串支持多语言
 print('包含中文的string')
 
