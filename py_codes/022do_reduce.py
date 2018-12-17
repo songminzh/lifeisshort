@@ -28,4 +28,4 @@ def str2float(s):
     List = s.split('.') # ['123', '456']
     zheng = List[0]
     xiao = List[1]
-    
+
