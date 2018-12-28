@@ -38,12 +38,10 @@ def metric(fn):
     @functools.wraps(fn)
     def wrapper(*args, **kw):
         start_time = time.time()
-        #执行传入的函数
         f = fn(*args, **kw)
         end_time = time.time()
         temp = end_time - start_time
-        print('%s executed in %s ms' % (fn.__name__, temp))
-        #返回传入的函数
+        print('%s() executed in %s ms' % (fn.__name__, temp))
         return f
     return wrapper
 
