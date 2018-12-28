@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# author by : murphy
 
 import functools
 import time
@@ -36,17 +35,17 @@ print(today.__name__)
 # 设计一个decorator，作用于任何函数，并打印该函数的执行时间
 
 def metric(fn):
-    def decorator(fn):
-        @functools.wraps(fn)
-        def counter(*args, **kw):
-            start_time = time.time()
-            f = fn(*args, **kw)
-            end_time = time.time()
-            temp = end_time - start_time
-            print('%s executed in %s ms' % (fn.__name__, temp))
-            return f
-        return counter
-    return decorator
+    @functools.wraps(fn)
+    def wrapper(*args, **kw):
+        start_time = time.time()
+        #执行传入的函数
+        f = fn(*args, **kw)
+        end_time = time.time()
+        temp = end_time - start_time
+        print('%s executed in %s ms' % (fn.__name__, temp))
+        #返回传入的函数
+        return f
+    return wrapper
 
 # 测试
 @metric
