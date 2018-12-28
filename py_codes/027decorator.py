@@ -1,23 +1,42 @@
 # -*- coding: utf-8 -*-
 # author by : murphy
 
-# 可直接作用于for循环的对象统称为可迭代对象：Iterable
-# 一类是集合数据类型，如list、tuple、dict、set、str等
-# 一类是generator，包括生成器和yield的generator function
+import functools
+import time
 
-# 可使用isinstance()判断一个对象是否是iterable对象
-from collections import Iterable
-from collections import Iterator
+def log(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kw):
+        print('call %s():' % func.__name__)
+        return func(*args, **kw)
+    return wrapper
 
-isIterable = isinstance([], Iterable)
-print(isIterable)
+@log
+def now():
+    print('2018-12-28')
 
-# 可使用isinstance()判断一个对象是否是Iterable对象
-isIterator = isinstance((x for x in range(10)), Iterator)
-print(isIterator)
+now()
 
-# 凡事可作用于for循环的对象都是Iterable类型
-# 凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列
-# 集合类型如list、dict、str等是Interable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象
-# Python的for循环本质上就是通过不断调用next()函数实现的。
+def logger(text):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            return func(*args, **kw)
+        return wrapper
+    return decorator
 
+@logger('DEBUG')
+def today():
+    print('2018-12-28')
+
+today()
+print(today.__name__)
+
+# 设计一个decorator，作用于任何函数，并打印该函数的执行时间
+
+def metric(fn):
+    @functools.wraps(fn)
+    def counter()
+    print('%s executed in %s ms' % (fn.__name__, 10.24))
+    return fn
