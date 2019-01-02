@@ -1,5 +1,6 @@
 #!usr/bin/env python3
 # -*- coding: utf-8 -*-
+# 类
 
 # 果要让内部属性不被外部访问，可以把属性的名称前加上两个下划线__
 class Student():
