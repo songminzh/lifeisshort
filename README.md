@@ -1,4 +1,5 @@
-Learning python through some exercises
+Learn python through some exercises
 
 
-From [廖雪峰的官方网站](https://www.liaoxuefeng.com)
+Learned in [廖雪峰的官方网站](https://www.liaoxuefeng.com)
+
