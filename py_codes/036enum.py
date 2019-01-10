@@ -30,3 +30,18 @@ Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', '
 
 for name, member in Month.__members__.items():
     print(name, '=>', member, ',', member.value)
+
+class Gender(Enum):
+    Male = 0
+    Female = 1
+
+class Student(object):
+    def init(self, name, gender):
+        self.name = name
+        self.gender = gender
+
+bart = Student('Bart', Gender.Male)
+if bart.gender == Gender.Male:
+    print('测试通过!')
+else:
+    print('测试失败!')
