@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import logging
+
 # try
 try:
     print('try...')
@@ -10,8 +12,6 @@ except ZeroDivisionError as e:
     print('except:', e)
 finally:
     print('finally...')
-print('END')
-
 
 # error
 def foo(s):
@@ -21,6 +21,10 @@ def bar(s):
     return foo(s) * 2
 
 def main():
-    bar('0')
+    try:
+        bar('0')
+    except Exception as e:
+        logging.exception(e)
 
 main()
+print('END')
