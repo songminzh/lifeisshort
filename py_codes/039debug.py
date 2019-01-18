@@ -28,3 +28,14 @@ def main():
 
 main()
 print('END')
+
+class FooError(ValueError):
+    pass
+
+def foos(s):
+    n = int(s)
+    if n == 0:
+        raise FooError('invalid value: %s', s)
+        return 10 / n
+    
+foos('0')
