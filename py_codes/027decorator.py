@@ -41,7 +41,7 @@ def metric(fn):
         f = fn(*args, **kw)
         end_time = time.time()
         temp = end_time - start_time
-        print('%s() executed in %s ms' % (fn.__name__, temp))
+        print('%s() executed in %.4f ms' % (fn.__name__, temp))
         return f
     return wrapper
 
